@@ -1,6 +1,6 @@
 
 --Contributors--
-Gus Ballman (gusballmanjr)
+Gus Ballman (gusballmanjr),
 Jaime Scott (mrthomaslibrary)
 
 # ARM Monolithic Kernel
