@@ -1,6 +1,3 @@
-/*
-
-*/
 #include "uart.h"
 
 void UART_Initial(void)
