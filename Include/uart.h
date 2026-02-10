@@ -1,3 +1,12 @@
+/******************************************************************************
+ * File: uart.h
+ * Description: Header file for UART driver of the Monolithic ARM Kernel.
+ *              Defines UART register addresses and declares initialization
+ *              and output functions.
+ *
+ * Authors: Gus Ballman
+ * Date: 2/9/2026
+ *****************************************************************************/
 
 #ifndef UART_H
 #define UART_H
