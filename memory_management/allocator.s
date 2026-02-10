@@ -47,7 +47,7 @@ bb_malloc:
 bb_dealloc:
   push {r4, lr}
   ldr r4, =memory_pool
-  mov r2, #32768
+  mov r2, #32764
 
   bbd_loop:
     ldr r1, [r4, r2]
@@ -55,7 +55,7 @@ bb_dealloc:
     beq bbd_deallocate
 
     subs r2, r2, #4
-    bge bd_loop
+    bge bbd_loop
     b bbd_finish
 
   bbd_deallocate:
