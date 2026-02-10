@@ -1,3 +1,9 @@
+/*
+* MrThomasLibrary
+*
+* Initial setup for what will be the memory allocation program. Uses 32,768 blocks of 32 kilobytes each
+*/
+
 .text
 .global main
 
