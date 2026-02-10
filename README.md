@@ -3,6 +3,15 @@
 Gus Ballman (gusballmanjr), and
 Jamie Scott (mrthomaslibrary)
 
+Important (to developers):
+use arm-none-eabi-as, when as your non-Vitis assembler (ie in the terminal)
+
+To Install:
+sudo apt install gcc-arm-none-eabi
+
+To Use:
+arm-non-eabi-as <input> -o <output>
+
 # ARM Monolithic Kernel -> IN PROGRESS (Expected April 2026)
 
 This  project is a bare-metal monolithic kernel for ARM boards, specifically tested on the RealDigital BlackBoard (realdigital.org). 
