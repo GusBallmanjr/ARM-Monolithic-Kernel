@@ -1,3 +1,8 @@
+@ MrThomasLibrary
+@ 02.10.2026
+@ Allocation program for the BlackBoard Kernel
+@ List of functions
+
 .section .data
 .align 3
 
@@ -20,7 +25,7 @@ bb_sbrk:
   bx lr
 
 @ [id]
-@Allocates the closest free block from 0 to the process @ id
+@ Allocates the closest free block from 0 to the process @ id
 bb_malloc:
   mov r2, #0
   bbm_loop:
@@ -36,9 +41,9 @@ bb_malloc:
   bbm_finish:
     bx lr
 
-@[id]
-@Deallocates the furthest block from 0 of the id
-@Deallocate means to set the process assigned to the block to 0
+@ [id]
+@ Deallocates the furthest block from 0 of the id
+@ Deallocate means to set the process assigned to the block to 0
 bb_dealloc:
   mov r2, #32768
   bbd_loop:
