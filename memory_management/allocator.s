@@ -36,6 +36,9 @@ bb_malloc:
   bbm_finish:
     bx lr
 
+@[id]
+@Deallocates the furthest block from 0 of the id
+@Deallocate means to set the process assigned to the block to 0
 bb_dealloc:
   mov r2, #32768
   bbd_loop:
@@ -47,7 +50,8 @@ bb_dealloc:
     bgt bd_loop
     b bbd_finish
   bbd_deallocate:
-    str #0, [r2]
+    mov r1, #0
+    str r1, [r2]
   bbd_finish:
     bx lr
 
