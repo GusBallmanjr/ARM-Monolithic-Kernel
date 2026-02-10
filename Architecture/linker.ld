@@ -14,7 +14,7 @@
  *   + _STACK_END_   : End of kernel stack
  *   + ENTRY(_boot)  : Entry point for the kernel
  *
- * Authors: Gus Ballman, Jamie Scott
+ * Authors: Gus Ballman
  * Date: 2/8/2026
  *****************************************************************************/
 
