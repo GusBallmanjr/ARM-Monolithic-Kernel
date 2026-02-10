@@ -34,10 +34,22 @@ bb_malloc:
   bbm_allocate:
     str r0, [r1]
   bbm_finish:
-  bx lr
+    bx lr
 
 bb_dealloc:
-  bx lr
+  mov r2, #32768
+  bbd_loop:
+    ldr r1, [r2]
+    cmp r0, r2
+    beq bbd_deallocate
+    sub r2, r2, #1
+    cmp r2, #0
+    bgt bd_loop
+    b bbd_finish
+  bbd_deallocate:
+    str #0, [r2]
+  bbd_finish:
+    bx lr
 
 bb_calloc:
   bx lr
