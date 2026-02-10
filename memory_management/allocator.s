@@ -18,13 +18,20 @@ free_list: .quad 0
 .global bb_mmap
 .global bb_munmap
 
+@ [~, x, y] -> [location]
+index:
+  mov r3, #32768
+  mul r0, r3, r1
+  add r0, r0, r2
+  bx lr
+
 bb_brk:
   bx lr
 
 bb_sbrk:
   bx lr
 
-@ [id]
+@ [id] -> [location]
 @ Allocates the closest free block from 0 to the process @ id
 bb_malloc:
   mov r2, #0
@@ -39,6 +46,8 @@ bb_malloc:
   bbm_allocate:
     str r0, [r1]
   bbm_finish:
+    mov r2, #0
+    bl index
     bx lr
 
 @ [id]
@@ -60,7 +69,17 @@ bb_dealloc:
   bbd_finish:
     bx lr
 
+@ [location]
 bb_calloc:
+  mov r2, #0
+  bl index
+  add r2, r0, #32768
+  bbc_loop:
+    mov r3, #0
+    str r3, [r0]
+    add r0, r0, #1
+    cmp r0, r2
+    blt bbc_loop
   bx lr
 
 bb_realloc:
