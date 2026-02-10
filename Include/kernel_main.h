@@ -3,7 +3,7 @@
  * Description: Header file for the main kernel entry point.
  *              Declares kernel_main() and includes necessary headers.
  *
- * Authors: Gus Ballman, Jamie Scott
+ * Authors: Gus Ballman
  * Date: 2/9/2026
  *****************************************************************************/
 
