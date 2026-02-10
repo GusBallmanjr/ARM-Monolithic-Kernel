@@ -1,7 +1,7 @@
 
 --Contributors--
 Gus Ballman (gusballmanjr), and
-Jaime Scott (mrthomaslibrary)
+Jamie Scott (mrthomaslibrary)
 
 # ARM Monolithic Kernel -> IN PROGRESS (Expected April 2026)
 
