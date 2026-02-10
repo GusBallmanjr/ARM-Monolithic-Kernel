@@ -9,26 +9,16 @@
 free_list: .quad 0
 
 .text
-.global bb_brk
-.global bb_sbrk
 .global bb_malloc
 .global bb_dealloc
 .global bb_calloc
 .global bb_realloc
-.global bb_mmap
-.global bb_munmap
 
 @ [~, x, y] -> [location]
 index:
   mov r3, #32768
   mul r0, r3, r1
   add r0, r0, r2
-  bx lr
-
-bb_brk:
-  bx lr
-
-bb_sbrk:
   bx lr
 
 @ [id] -> [location]
@@ -82,8 +72,18 @@ bb_calloc:
     blt bbc_loop
   bx lr
 
+@ [size] -> [failed]
 bb_realloc:
-  bx lr
+  mov r1, #32768
+  cmp r0, r1
+  bbr_true:
+    mov r0, #1
+    b bbr_finish
+  bbr_false:
+    mov r0, #0
+    b bbr_finish
+  bbr_finish:
+    bx lr
 
 bb_mmap:
   bx lr
