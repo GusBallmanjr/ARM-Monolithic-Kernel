@@ -19,7 +19,21 @@ bb_brk:
 bb_sbrk:
   bx lr
 
+@ [id]
+@Allocates the closest free block from 0 to the process @ id
 bb_malloc:
+  mov r2, #0
+  bbm_loop:
+    ldr r1, [r2]
+    cmp r1, #0
+    beq bbm_allocate
+    add r2, r2, #1
+    cmp r2, #32768
+    blt bbm_loop
+    b bbm_finish
+  bbm_allocate:
+    str r0, [r1]
+  bbm_finish:
   bx lr
 
 bb_dealloc:
