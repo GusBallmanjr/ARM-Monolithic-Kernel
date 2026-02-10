@@ -84,9 +84,3 @@ bb_realloc:
     b bbr_finish
   bbr_finish:
     bx lr
-
-bb_mmap:
-  bx lr
-
-bb_munmap:
-  bx lr
