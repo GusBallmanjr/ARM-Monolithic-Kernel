@@ -1,3 +1,22 @@
+@******************************************************************************
+@ File: startup.s
+@ Description: Kernel startup code for the Monolithic ARM Kernel.
+@              Sets up the stack, clears the BSS section, and jumps
+@              to the main kernel function.
+@
+@ Sections:
+@   + .text.startup : Contains the reset/startup code.
+@
+@ Symbols:
+@   + _boot        : Entry point for the CPU after reset.
+@   + _STACK_TOP_  : Top of the kernel stack.
+@   + _bss_start_  : Start of zero-initialized data section.
+@   + _bss_end_    : End of zero-initialized data section.
+@
+@ Authors: Gus Ballman, Jamie Scott
+@ Date: 2/8/2026
+@******************************************************************************
+
 .section .text.startup, "ax"
 .global _boot
 
