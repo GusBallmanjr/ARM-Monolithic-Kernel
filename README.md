@@ -3,7 +3,7 @@
 Gus Ballman (gusballmanjr), and
 Jaime Scott (mrthomaslibrary)
 
-# ARM Monolithic Kernel
+# ARM Monolithic Kernel -> IN PROGRESS (Expected April 2026)
 
 This  project is a bare-metal monolithic kernel for ARM boards, specifically tested on the RealDigital BlackBoard (realdigital.org). 
 The project includes the hardware initialization for the CPU and the UARTs, and running a simple kernel loop. 
