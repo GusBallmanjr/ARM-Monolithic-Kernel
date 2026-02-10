@@ -1,40 +1,38 @@
-/*
-* MrThomasLibrary
-*
-* Initial setup for what will be the memory allocation program. Uses 32,768 blocks of 32 kilobytes each
-*/
+.section .data
+.align 3
+
+free_list: .quad 0
 
 .text
-.global main
+.global bb_brk
+.global bb_sbrk
+.global bb_malloc
+.global bb_dealloc
+.global bb_calloc
+.global bb_realloc
+.global bb_mmap
+.global bb_munmap
 
-//  [output, x, y] Finds indexed memory block (x) and offset (y)
-index:
-  LDR r3, =32768
-  MUL r0, r1, r3
-  ADD r0, r0, r2
+bb_brk:
   bx lr
 
-//  [id]   Sets next empty block to the process (id)
-allocate:
-  MOV r0, #0
-  MOV r2, #0
-  
-  loop:
-  LDR r3, [r0, r2]
-  CMP r3, #0
-  beq empty
-  ADD r2, r2, #3
-  b loop
-  CMP r2, #32768
-  blt finish
-
-  empty:
-  STR r1, [r3]
+bb_sbrk:
   bx lr
 
-  finish:
+bb_malloc:
   bx lr
 
-main:
+bb_dealloc:
+  bx lr
 
-.end
+bb_calloc:
+  bx lr
+
+bb_realloc:
+  bx lr
+
+bb_mmap:
+  bx lr
+
+bb_munmap:
+  bx lr
