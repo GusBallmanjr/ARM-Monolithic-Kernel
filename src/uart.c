@@ -18,7 +18,7 @@
  *   + Current UART_putc function is incomplete and requires FIFO handling.
  *
  * Authors: Jamie Scott, Gus Ballman
- * Date: [2/9/2026
+ * Date: 2/9/2026
  *****************************************************************************/
 
 #include "uart.h"
