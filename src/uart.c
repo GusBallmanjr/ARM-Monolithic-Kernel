@@ -1,3 +1,26 @@
+/******************************************************************************
+ * File: uart.c
+ * Description: UART driver for the Monolithic ARM Kernel.
+ *              Provides basic UART initialization.
+ *
+ * Functions:
+ *   + UART_Initial(): Initializes UART1 with a specific baud rate, mode, 
+ *                     and control settings. Includes a delay to ensure 
+ *                     proper reset.
+ *   + UART_putc(char c): Placeholder function for sending a single character 
+ *                        over UART. Implementation to be completed.
+ *
+ * Notes:
+ *   + This driver is designed for UART1; addresses are calculated 
+ *     using UART_BASE + offset for each register.
+ *   + All registers are accessed via volatile pointers to prevent 
+ *     compiler optimizations that could interfere with hardware access.
+ *   + Current UART_putc function is incomplete and requires FIFO handling.
+ *
+ * Authors: Jamie Scott, Gus Ballman
+ * Date: [2/9/2026
+ *****************************************************************************/
+
 #include "uart.h"
 
 void UART_Initial(void)
